@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+#pagination-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#prev-page, #next-page {
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #358dd0;
+  color: white;
+  cursor: pointer;
+}
+
+#prev-page:disabled, #next-page:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#pagination-controls button {
+  margin-left: 10px;
+}
+
+    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose a contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-8">
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <h1 class="text-2xl font-bold mb-6">Choose a contact</h1>
+    <!-- Top section divided into left and right -->
+    <div class="grid grid-cols-2 gap-6">
+      <!-- Left section -->
+      <div>
+        <form id="search-form">
+          <div class="grid grid-cols-1 gap-4">
+            <div class="flex space-x-4">
+                <div class="flex-1">
+                  <label for="first-name" class="block text-gray-700 font-bold mb-2">First name</label>
+                  <input type="text" id="first-name" name="first-name" class="border border-gray-300 rounded-md py-2 px-3 w-full focus:outline-none focus:ring focus:border-blue-500">
+                </div>
+                <div class="flex-1">
+                  <label for="last-name" class="block text-gray-700 font-bold mb-2">Last name</label>
+                  <input type="text" id="last-name" name="last-name" class="border border-gray-300 rounded-md py-2 px-3 w-full focus:outline-none focus:ring focus:border-blue-500">
+                </div>
+                <div class="flex-1">
+                  <label for="date-of-birth" class="block text-gray-700 font-bold mb-2">Date of birth</label>
+                  <input type="date" id="date-of-birth" name="date-of-birth" class="border border-gray-300 rounded-md py-2 px-3 w-full focus:outline-none focus:ring focus:border-blue-500">
+                </div>
+              </div>
+              
+              <div class="flex space-x-4">
+                <div class="flex-1">
+                  <label for="email" class="block text-gray-700 font-bold mb-2">Email address</label>
+                  <input type="email" id="email" name="email" class="border border-gray-300 rounded-md py-2 px-3 w-full focus:outline-none focus:ring focus:border-blue-500">
+                </div>
+                <div class="flex-1">
+                  <label for="phone" class="block text-gray-700 font-bold mb-2">Phone number</label>
+                  <input type="tel" id="phone" name="phone" class="border border-gray-300 rounded-md py-2 px-3 w-full focus:outline-none focus:ring focus:border-blue-500">
+                </div>
+              </div>
+              
+          </div>
+          <button type="submit" class="bg-white border-2 border-blue-500 text-blue-500 font-bold py-2 px-4 rounded mt-4 hover:bg-blue-500 hover:text-white">
+            Search
+          </button>
+          
+        </form>
+      </div>
+
+      <!-- Right section -->
+      <div>
+        <div>
+          <label for="street-address" class="block text-gray-700 font-bold mb-2">Street address</label>
+          <input type="text" id="street-address" class="border border-gray-300 rounded-md py-2 px-3 w-full focus:outline-none focus:ring focus:border-blue-500 mb-4">
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+          <div>
+            <label for="city" class="block text-gray-700 font-bold mb-2">City</label>
+            <input type="text" id="city" class="border border-gray-300 rounded-md py-2 px-3 w-full focus:outline-none focus:ring focus:border-blue-500">
+          </div>
+          <div>
+            <label for="state" class="block text-gray-700 font-bold mb-2">State</label>
+            <select id="state" class="border border-gray-300 rounded-md py-2 px-3 w-full focus:outline-none focus:ring focus:border-blue-500">
+              <option value="">Select state</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+              
+              <!-- Add more states -->
+            </select>
+          </div>
+          <div>
+            <label for="zip-code" class="block text-gray-700 font-bold mb-2">Zip Code</label>
+            <input type="text" id="zip-code" class="border border-gray-300 rounded-md py-2 px-3 w-full focus:outline-none focus:ring focus:border-blue-500">
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Bottom table -->
+<div id="search-results" class="overflow-x-auto mt-6">
+    <table class="table-auto w-full border-collapse border border-gray-300">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2">Date of birth</th>
+          <th class="px-4 py-2">Address</th>
+          <th class="px-4 py-2">City</th>
+          <th class="px-4 py-2">State</th>
+          <th class="px-4 py-2">Zip</th>
+          <th class="px-4 py-2">Email</th>
+          <th class="px-4 py-2">Phone</th>
+          <th class="px-4 py-2">Action</th>
+        </tr>
+      </thead>
+      <tbody id="search-table-body"></tbody>
+    </table>
+  
+    <!-- Pagination controls -->
+    <div id="pagination-controls" class="mt-4 text-right">
+      <button id="prev-page" class="bg-gray-500 text-white px-4 py-2 rounded" disabled>
+        <i class="fas fa-chevron-left"></i> <!-- Font Awesome left arrow -->
+      </button>
+      <span id="page-number" class="mx-4">Page 1</span>
+      <button id="next-page" class="bg-gray-500 text-white px-4 py-2 rounded">
+        <i class="fas fa-chevron-right"></i> <!-- Font Awesome right arrow -->
+      </button>
+    </div>
+  </div>
+  
+  
+  <script>
+     // Sample data
+    const contacts = [
+    
+  {
+    name: 'Rajiv Patel',
+    dob: '1980-05-14',
+    address: '6789 OAKWOOD AVE',
+    city: 'Birmingham',
+    state: 'AL',
+    zip: '35203',
+    email: 'rajiv.patel@example.com',
+    phone: '2051234567'
+  },
+  {
+    name: 'Anika Mehta',
+    dob: '1990-10-22',
+    address: '9012 PINE ST',
+    city: 'Phoenix',
+    state: 'AZ',
+    zip: '85004',
+    email: 'anika.mehta@example.com',
+    phone: '4807654321'
+  },
+  {
+    name: 'Kunal Singh',
+    dob: '1978-08-19',
+    address: '3456 BIRCH DR',
+    city: 'Little Rock',
+    state: 'AR',
+    zip: '72201',
+    email: 'kunal.singh@example.com',
+    phone: '5015436789'
+  },
+  {
+    name: 'Priya Gupta',
+    dob: '1987-03-05',
+    address: '7894 CEDAR WAY',
+    city: 'Denver',
+    state: 'CO',
+    zip: '80202',
+    email: 'priya.gupta@example.com',
+    phone: '7202345678'
+  },
+  {
+    name: 'Aarav Kapoor',
+    dob: '1992-06-11',
+    address: '2234 SPRUCE LN',
+    city: 'Miami',
+    state: 'FL',
+    zip: '33101',
+    email: 'aarav.kapoor@example.com',
+    phone: '3059876543'
+  },
+  {
+    name: 'Maya Sharma',
+    dob: '1985-12-29',
+    address: '4421 MAPLE AVE',
+    city: 'Atlanta',
+    state: 'GA',
+    zip: '30303',
+    email: 'maya.sharma@example.com',
+    phone: '4045678901'
+  },
+  {
+    name: 'Ishan Desai',
+    dob: '1973-01-15',
+    address: '5621 FIR ST',
+    city: 'Boise',
+    state: 'ID',
+    zip: '83702',
+    email: 'ishan.desai@example.com',
+    phone: '2086781234'
+  }
+
+    ];
+
+    let currentPage = 1;
+const recordsPerPage = 5;
+
+// Function to render search results
+function renderSearchResults(data) {
+  const tableBody = document.getElementById('search-table-body');
+  tableBody.innerHTML = '';
+  const startIndex = (currentPage - 1) * recordsPerPage;
+  const endIndex = startIndex + recordsPerPage;
+  const paginatedData = data.slice(startIndex, endIndex);
+
+  paginatedData.forEach(contact => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td class="border px-4 py-2">${contact.name}</td>
+      <td class="border px-4 py-2">${contact.dob}</td>
+      <td class="border px-4 py-2">${contact.address}</td>
+      <td class="border px-4 py-2">${contact.city}</td>
+      <td class="border px-4 py-2">${contact.state}</td>
+      <td class="border px-4 py-2">${contact.zip}</td>
+      <td class="border px-4 py-2">${contact.email}</td>
+      <td class="border px-4 py-2">${contact.phone}</td>
+      <td class="border px-4 py-2">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded select-contact">Select</button>
+      </td>
+    `;
+    row.querySelector('.select-contact').addEventListener('click', () => selectContact(contact));
+    tableBody.appendChild(row);
+  });
+
+  // Update pagination controls
+  updatePaginationControls(data.length);
+}
+
+// Function to select a contact
+function selectContact(contact) {
+  document.getElementById('street-address').value = contact.address;
+  document.getElementById('city').value = contact.city;
+  document.getElementById('state').value = contact.state;
+  document.getElementById('zip-code').value = contact.zip;
+}
+
+// Function to update pagination controls
+function updatePaginationControls(totalRecords) {
+  const totalPages = Math.ceil(totalRecords / recordsPerPage);
+  document.getElementById('page-number').innerText = `Page ${currentPage}`;
+
+  document.getElementById('prev-page').disabled = currentPage === 1;
+  document.getElementById('next-page').disabled = currentPage === totalPages;
+}
+
+// Event listeners for pagination buttons
+document.getElementById('prev-page').addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    renderSearchResults(contacts);
+  }
+});
+
+document.getElementById('next-page').addEventListener('click', () => {
+  const totalPages = Math.ceil(contacts.length / recordsPerPage);
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderSearchResults(contacts);
+  }
+});
+
+// Initial rendering of sample data
+renderSearchResults(contacts);
+
+// Search form submission
+document.getElementById('search-form').addEventListener('submit', (event) => {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const filteredContacts = contacts.filter(contact => {
+    const firstName = contact.name.split(' ')[0].toLowerCase();
+    const lastName = contact.name.split(' ')[1].toLowerCase();
+    const dob = contact.dob;
+    const email = contact.email.toLowerCase();
+    const phone = contact.phone;
+    return (
+      firstName.includes(formData.get('first-name').toLowerCase()) &&
+      lastName.includes(formData.get('last-name').toLowerCase()) &&
+      dob.includes(formData.get('date-of-birth')) &&
+      email.includes(formData.get('email').toLowerCase()) &&
+      phone.includes(formData.get('phone'))
+    );
+  });
+  renderSearchResults(filteredContacts);
+});  </script>
+</body>
+</html>
